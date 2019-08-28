@@ -30,7 +30,7 @@ The other arguments are optional:
 * `batch_size`. Specifices the batch size to use when processing sets of samples in training and inference.
 * `epochs`. Number of epochs to train the model.
 * `frac`. Maximum fraction of GPU memory to use.
-* `eta`. Maximum $\ell_\infty$ perturbation budget for adversarial attacks.
+* `eta`. Maximum &ell;<sub>&infin;</sub> perturbation budget for adversarial attacks.
 
 Note that the command-line script will generate a Markdown report under `reports/module.md` where `module` is the module name (in this case, `cifar10`) as well as several plots in the directory `plots/`. You should be able to directly run our code for MNIST, Fashion-MNIST and CIFAR-10 if you have all of the dependencies and if the `plots` and `reports` directories exist. The SVHN and Asirra data sets are not included in Keras and should be downloaded separately:
 
