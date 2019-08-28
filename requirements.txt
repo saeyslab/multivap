@@ -2,3 +2,4 @@ tensorflow==1.14.0
 keras==2.2.4
 numpy==1.16.4
 foolbox==1.8.0
+cvxopt==1.2.3

@@ -10,7 +10,8 @@ We tested our code using the following dependencies:
 * TensorFlow 1.14.0 (https://www.tensorflow.org/);
 * Keras 2.2.4 (https://www.keras.io/);
 * NumPy 1.16.4 (http://www.numpy.org/);
-* Foolbox 1.8.0 (https://foolbox.readthedocs.io).
+* Foolbox 1.8.0 (https://foolbox.readthedocs.io);
+* CVXOPT 1.2.3 (https://cvxopt.org/documentation/index.html).
 
 ## Running the code
 
