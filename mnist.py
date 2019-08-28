@@ -7,6 +7,9 @@ import numpy as np
 
 num_classes = 10
 
+def get_optimizer():
+    return 'adam'
+
 def load_datasets():
     # the data, split between train and test sets
     (x_train, y_train), (x_test, y_test) = mnist.load_data()

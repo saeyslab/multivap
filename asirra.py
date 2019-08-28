@@ -17,7 +17,7 @@ def get_optimizer():
 def load_datasets():
     images = []
     labels = []
-    with zipfile.ZipFile('/home/jpeck/datasets/asirra.zip', 'r') as f:
+    with zipfile.ZipFile('asirra.zip', 'r') as f:
         for i in range(SIZE):
             with f.open('PetImages/Cat/{}.jpg'.format(i)) as g:
                 try:

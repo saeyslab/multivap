@@ -13,11 +13,11 @@ def get_optimizer():
 
 def load_datasets():
     # the data, split between train and test sets
-    train = scipy.io.loadmat('../datasets/svhn/train.mat')
+    train = scipy.io.loadmat('svhn/train.mat')
     x_train = train['X'].transpose((3, 0, 1, 2))
     y_train = train['y']
 
-    test = scipy.io.loadmat('../datasets/svhn/test.mat')
+    test = scipy.io.loadmat('svhn/test.mat')
     x_test = test['X'].transpose((3, 0, 1, 2))
     y_test = test['y']
 
