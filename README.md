@@ -12,6 +12,32 @@ In order to run our code, it is necessary to install the following dependencies:
 * NumPy 1.14.5 (http://www.numpy.org/);
 * Foolbox 1.4.0 (https://foolbox.readthedocs.io).
 
+## Running the code
+
+There are two ways our code can be run: either you follow the Jupyter notebook `cifar10_demo.ipynb` included in this repository or you can use the command-line script. The notebook is self-explanatory; the command-line script can be invoked as follows:
+
+    python main.py cifar10 --batch_size 128 --epochs 10 --frac .8 --eta .03
+
+The first argument is the only mandatory one and must name a Python module, in this case `cifar10.py`. This module must define at least the following methods:
+
+* `get_optimizer`. Returns a Keras optimizer to be used for fitting the model.
+* `load_datasets`. Returns a tuple `(x_train, y_train, x_test, y_test)` specifying the training and test data.
+* `create_model`. Returns the Keras model that will be trained and used for instantiating the MultIVAP.
+
+The other arguments are optional:
+
+* `batch_size`. Specifices the batch size to use when processing sets of samples in training and inference.
+* `epochs`. Number of epochs to train the model.
+* `frac`. Maximum fraction of GPU memory to use.
+* `eta`. Maximum $\ell_\infty$ perturbation budget for adversarial attacks.
+
+You should be able to directly run our code for MNIST, Fashion-MNIST and CIFAR-10 if you have all of the dependencies. The SVHN and Asirra data sets are not included in Keras and should be downloaded separately:
+
+* [Download link for SVHN](http://ufldl.stanford.edu/housenumbers/)
+* [Download link for Asirra](https://www.microsoft.com/en-us/download/details.aspx?id=54765)
+
+The IVAP implementation we use here is provided by [Paolo Toccaceli](https://github.com/ptocca/VennABERS).
+
 ## References
 
 1. Vovk, Vladimir, Ivan Petej, and Valentina Fedorova. "Large-scale probabilistic predictors with and without guarantees of validity." Advances in Neural Information Processing Systems. 2015. [PDF](https://papers.nips.cc/paper/5805-large-scale-probabilistic-predictors-with-and-without-guarantees-of-validity.pdf)
