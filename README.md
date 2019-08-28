@@ -4,13 +4,13 @@ This repository contains a reference implementation for our defense against [adv
 
 ## Prerequisites
 
-In order to run our code, it is necessary to install the following dependencies:
+We tested our code using the following dependencies:
 
-* Python 3.5.2 or higher (https://www.python.org/);
-* TensorFlow 1.8.0 (https://www.tensorflow.org/);
-* Keras 2.2.0 (https://www.keras.io/);
-* NumPy 1.14.5 (http://www.numpy.org/);
-* Foolbox 1.4.0 (https://foolbox.readthedocs.io).
+* Python 3.6.8 (https://www.python.org/);
+* TensorFlow 1.14.0 (https://www.tensorflow.org/);
+* Keras 2.2.4 (https://www.keras.io/);
+* NumPy 1.16.4 (http://www.numpy.org/);
+* Foolbox 1.8.0 (https://foolbox.readthedocs.io).
 
 ## Running the code
 
