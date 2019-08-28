@@ -31,7 +31,7 @@ The other arguments are optional:
 * `frac`. Maximum fraction of GPU memory to use.
 * `eta`. Maximum $\ell_\infty$ perturbation budget for adversarial attacks.
 
-You should be able to directly run our code for MNIST, Fashion-MNIST and CIFAR-10 if you have all of the dependencies. The SVHN and Asirra data sets are not included in Keras and should be downloaded separately:
+Note that the command-line script will generate a Markdown report under `reports/module.md` where `module` is the module name (in this case, `cifar10`) as well as several plots in the directory `plots/`. You should be able to directly run our code for MNIST, Fashion-MNIST and CIFAR-10 if you have all of the dependencies and if the `plots` and `reports` directories exist. The SVHN and Asirra data sets are not included in Keras and should be downloaded separately:
 
 * [Download link for SVHN](http://ufldl.stanford.edu/housenumbers/)
 * [Download link for Asirra](https://www.microsoft.com/en-us/download/details.aspx?id=54765)
