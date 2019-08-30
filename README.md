@@ -36,7 +36,7 @@ The other arguments are optional:
 
 Note that the command-line script will generate a Markdown report under `reports/module.md` where `module` is the module name (in this case, `cifar10`) as well as several plots in the directory `plots/`. You should be able to directly run our code for MNIST, Fashion-MNIST and CIFAR-10 if you have all of the dependencies and if the `plots` and `reports` directories exist. The SVHN and Asirra data sets are not included in Keras and should be downloaded separately:
 
-* [Download link for SVHN](http://ufldl.stanford.edu/housenumbers/)
+* [Download link for SVHN](http://ufldl.stanford.edu/housenumbers/) (note that we used the cropped 32x32 digits in our experiments)
 * [Download link for Asirra](https://www.microsoft.com/en-us/download/details.aspx?id=54765)
 
 The IVAP implementation we use here is provided by [Paolo Toccaceli](https://github.com/ptocca/VennABERS).
