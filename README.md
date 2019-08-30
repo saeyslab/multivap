@@ -13,6 +13,8 @@ We tested our code using the following dependencies:
 * Foolbox 1.8.0 (https://foolbox.readthedocs.io);
 * CVXOPT 1.2.3 (https://cvxopt.org/documentation/index.html).
 
+There is a requirements file included, so if you have the correct Python version you should be able to install all other dependencies using `pip install -r requirements.txt`.
+
 ## Running the code
 
 There are two ways our code can be run: either you follow the Jupyter notebook `cifar10_demo.ipynb` included in this repository or you can use the command-line script. The notebook is self-explanatory; the command-line script can be invoked as follows:
