@@ -1,6 +1,6 @@
 # MultIVAP defense against adversarial examples
 
-This repository contains a reference implementation for our defense against [adversarial examples](https://adversarial-ml-tutorial.org/introduction/), which uses a technique from conformal prediction called *inductive Venn-ABERS predictors* (IVAPs; see [1, 2, 3] for more details). This is a follow-up to our ESANN 2019 contribution where we proposed a similar technique that is limited to *binary* classification only [4]. Here, we extend the method to the multiclass case and improve upon its clean accuracy and adversarial robustness.
+This repository contains a reference implementation for our defense against [adversarial examples](https://adversarial-ml-tutorial.org/introduction/), which uses a technique from conformal prediction called *inductive Venn-ABERS predictors* (IVAPs; see [1, 2, 3] for more details). This is a follow-up to our ESANN 2019 contribution where we proposed a similar technique that is limited to *binary* classification only [4]. Here, we extend the method to the multiclass case and improve upon its clean accuracy and adversarial robustness. The full paper is [available here](https://users.ugent.be/~jpeck/files/MultIVAP.pdf).
 
 ## Prerequisites
 
