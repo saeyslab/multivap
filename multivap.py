@@ -12,6 +12,8 @@ from VennABERS import ScoresToMultiProbs, computeF, getFVal, prepareData
 
 from collections import namedtuple
 
+from tqdm import tqdm
+
 class MultIVAP:
     def __init__(self, model, x_calib, y_calib, num_classes):
         self.ivaps = []
@@ -76,6 +78,17 @@ class MultIVAP:
             else:
                 lower = beta
         return beta, eff
+    
+    def occurence_matrix(self, samples, beta, batch_size=128):
+        probs = self.predict(samples, beta, batch_size)
+        occurence_matrix = np.zeros((self.num_classes, self.num_classes))
+        for i in range(self.num_classes):
+            for j in range(self.num_classes):
+                if i == j: continue
+                occurence_matrix[i, j] = np.sum([y_pred[i] == 1 and y_pred[j] == 1
+                                                 for y_pred in probs
+                                                if y_pred.sum() > 1])
+        return occurence_matrix
 
     def evaluate(self, samples, labels, beta, batch_size=128):
         probs = self.predict(samples, beta, batch_size)
@@ -87,7 +100,7 @@ class MultIVAP:
                                                                             probs)
                                                 if y_pred.sum() > 0])
         
-        Metrics = namedtuple('Metrics', ['eff', 'eff_lower', 'eff_upper', 'acc', 'rej', 'trr', 'frr'])
+        Metrics = namedtuple('Metrics', ['eff', 'eff_lower', 'eff_upper', 'acc', 'rej', 'trr', 'frr', 'jac'])
         sizes = probs.sum(axis=1)
 
         try:
@@ -110,7 +123,9 @@ class MultIVAP:
         trr = trs / (trs + fas)
         frr = frs / (frs + tas)
 
-        return confusion_matrix, Metrics(eff, eff_lower, eff_upper, acc, rej, trr, frr)
+        jac = np.sum([1 / size for i, size in enumerate(sizes) if probs[i, labels[i].argmax()] == 1]) / samples.shape[0]
+
+        return confusion_matrix, Metrics(eff, eff_lower, eff_upper, acc, rej, trr, frr, jac)
 
 class IVAP:
     def __init__(self, model, x_calib, y_calib, class_idx=0, num_classes=2):
